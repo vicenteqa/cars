@@ -5,5 +5,9 @@
 	},
 	"scripts": {
 		"scrap": "node src/main.js"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/vicenteqa/cars.git"
+	  }
 }
