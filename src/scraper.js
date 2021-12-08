@@ -7,14 +7,25 @@ async function getData(url) {
 	return cheerio.load(data);
 }
 
-async function getRawCarPrice(url) {
+async function getAllCarData(url) {
+	let carDataJson = {};
 	const $ = await getData(url);
-	return $(carPO.carPriceLabel).html();
+	carDataJson.modelo = $(carPO.carModel).html();
+	const rawPrice = $(carPO.carPriceLabel).html();
+	carDataJson.precio = rawPrice.split('&')[0] + '€';
+	let campoDireccion2 = $(carPO.address2).html().split('i>')[1].split('&nbsp;');
+	carDataJson.direccion = $(carPO.address1).html() + ', ' + campoDireccion2[0] + ', ' + campoDireccion2[1];
+	let telefonos = $(carPO.phoneNumbers).html();
+	telefonos = telefonos.replace('<li>', ' ');
+	telefonos = telefonos.replace('<li>', ' ');
+	telefonos = telefonos.replace('<li>', ' ');
+	telefonos = telefonos.replace('<li>', ' ');
+	telefonos = telefonos.replace('</li>', ' ');
+	telefonos = telefonos.replace('</li>', ' ');
+	telefonos = telefonos.replace('</li>', ' ');
+	telefonos = telefonos.replace('</li>', ' ');
+	carDataJson.telefonos = telefonos;
+	return carDataJson;
 }
 
-async function getFormatedCarPrice(url) {
-	const rawPrice = await getRawCarPrice(url);
-	return rawPrice.split('&')[0] + '€';
-}
-
-exports.getFormatedCarPrice = (url) => getFormatedCarPrice(url);
+exports.getAllCarData = (url) => getAllCarData(url);
