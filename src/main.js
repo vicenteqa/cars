@@ -1,4 +1,4 @@
-const getFormatedCarPrice = require('./scraper').getFormatedCarPrice;
+const getAllCarData = require('./scraper').getAllCarData;
 
 const urlToScrape = process.argv[2];
-getFormatedCarPrice(urlToScrape).then((formatedPrice) => console.log(formatedPrice));
+getAllCarData(urlToScrape).then((carData) => console.log(JSON.stringify(carData)));

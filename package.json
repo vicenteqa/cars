@@ -1,13 +1,20 @@
 {
 	"dependencies": {
 		"axios": "^0.24.0",
-		"cheerio": "1.0.0-rc.10"
+		"body-parser": "^1.19.0",
+		"cheerio": "1.0.0-rc.10",
+		"express": "^4.17.1",
+		"morgan": "^1.10.0"
 	},
 	"scripts": {
-		"scrap": "node src/main.js"
+		"scrap": "node src/main.js",
+		"start": "node src/index.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/vicenteqa/cars.git"
-	  }
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.15"
+	}
 }
