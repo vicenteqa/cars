@@ -7,7 +7,8 @@
 		"morgan": "^1.10.0"
 	},
 	"scripts": {
-		"scrap": "node src/main.js"
+		"scrap": "node src/main.js",
+		"start": "node src/index.js"
 	},
 	"repository": {
 		"type": "git",
