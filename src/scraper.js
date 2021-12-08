@@ -3,8 +3,18 @@ const cheerio = require('cheerio');
 const carPO = require('./pageObject/carPO').default;
 
 async function getData(url) {
-	const { data } = await axios.get(url);
-	return cheerio.load(data);
+	try {
+		const { data } = await axios.get(url);
+		return cheerio.load(data);
+	} catch (err) {
+		console.log(err.response.status);
+		const host = err.response.request.connection._host;
+		const httpHeader = err.response.request.connection._httpMessage._header;
+		const urlPath = httpHeader.split(' HTTP')[0].split('GET ')[1];
+		const redirectedUrl = 'https://' + host + urlPath;
+		console.log(redirectedUrl);
+		return getData(redirectedUrl);
+	}
 }
 
 async function getFormatedPrice($) {

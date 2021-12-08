@@ -1,0 +1,5 @@
+
+> @ scrap /Users/vicente.ruiz/code/cars
+> node src/main.js "https://link.mobile.de/?link=https%3A%2F%2Fsuchen.mobile.de%2Ffahrzeuge%2Fdetails.html%3Fid%3D335316569%26utm_source%3DsharedAd%26utm_medium%3Dandroid%26utm_campaign%3DDynamicLinkApp&apn=de.mobile.android.app&amv=690&st=Bentley%20Continental%20GT%206.0%20W12%204WD%20*B%26O*NIGHTVISION*&sd=First%20Registration%3A%2007%2F2018%0AMileage%3A%2012.700%C2%A0km%0AFuel%3A%20Petrol%0APower%3A%20467%C2%A0kW%C2%A0(635%C2%A0Hp)%0A&si=https%3A%2F%2Fi.ebayimg.com%2F00%2Fs%2FMTIwMFgxNjAw%2Fz%2F-kMAAOSwfY5hrkQ4%2F%24_20.JPG&utm_campaign=DynamicLinkApp&utm_medium=android&utm_source=sharedAd"
+
+Error: Request failed with status code 303
